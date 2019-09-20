@@ -1,0 +1,188 @@
+
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+
+
+
+
+*, html {
+    box-sizing: border-box;
+}
+
+*:before, *:after {
+    box-sizing: inherit,
+}
+
+html, body, * {
+    padding: 0;
+    margin: 0;
+    font-family: 'oswald';
+}
+
+///////////// MIXINS //////////////
+@mixin phone {
+    @media (max-width: 599px) {
+      @content;
+    }
+  }
+  
+  @mixin tabletP {
+    @media (min-width: 600px) {
+      @content;
+    }
+  }
+  
+  @mixin tabletL {
+    @media (min-width: 900px) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+  
+  @mixin desktopL {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+
+//////////////// LANDING PAGE ////////////////////
+
+header {
+    text-align: center;
+    height: 100vh;
+    background-image: url('/Images/Robert\ 0368.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    div {
+        
+        position: relative;
+        top: 7%;
+        max-width: 20rem;
+        margin: 0 auto;
+        color: white;
+        background: rgba(0, 0, 0, .4);
+        padding-bottom: 3rem;
+        padding-top: 3rem;
+    }
+}
+
+/////////////// PROJECTS ////////////////
+
+.projects {
+    position: relative;
+    background: white;
+    
+    transform: skewY(-22deg);
+
+    .unslant {
+        transform: skewY(22deg);
+    }
+
+    h2 {
+        padding-top: 4rem;
+        width: 100%;
+        text-align: center;
+        color: black;
+        z-index: 3;
+    }
+
+    p {
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        .underlight {
+            font-size: .8rem;
+            color: rgb(58, 57, 57);
+            margin-bottom: 3rem;
+        }
+    }
+
+    .flexitems {
+        @include tabletL {
+            display: flex;
+            flex: 1;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+        }
+
+        
+    }
+
+    article {
+        width: 100%;
+        height: 300px;
+        background-image: url('/Images/art50tiny.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @include tabletL {
+            max-width: 450px;
+            min-width: 300px;
+            margin: 2rem;
+           
+        }
+
+        h4 {
+            color: white;
+            padding-top: 3rem;
+            padding-left: 2rem;
+            font-size: 2rem;
+        }
+
+        p {
+            color: white;
+            padding-left: 2rem;
+            text-align: left;
+        }
+    }
+
+    .bluebee {
+        margin-top: 2rem;
+        
+    }
+    
+}
+
+// .projects::before {
+//     position: absolute;
+//     content: "";
+//     width: 100%;
+//     height: 10%;   
+//     display: block;
+//     top: 0;
+//     left: 0;
+//     background: white;
+//     transform-origin: top center;
+//     transform: skewY(-20deg);
+    
+// }
+
+
+
+////////////// About ///////////
+
+.about {
+    background: black;
+    height: 60vh;
+}
+
+
+////////// Contact /////////
+
+.contact {
+    background: darkblue;
+    height: 60vh;
+}
+
+
+///////// footer //////////
