@@ -15,44 +15,92 @@ html, body, * {
   font-family: 'rubik';
 }
 
-body {
+.highlightOne {
+  background: #ef2e5d;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.highlightTwo {
+  background: #66b0ff;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.highlightOne1 {
+  background: #ef2e5d;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+html, body {
   background: black;
+}
+
+.backgroundImage {
+  background-image: url("/Images/Robert 0368.JPG");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 110%;
+  height: 110%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 header {
   text-align: center;
   height: 100vh;
-  background-image: url("/Images/Robert 0368.JPG");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  overflow: hidden;
+  position: relative;
 }
 
-header div {
-  position: relative;
+header h1 {
+  font-size: 3rem;
+}
+
+header p {
+  line-height: 1.7rem;
+}
+
+header .mainIntro {
+  position: absolute;
   top: 7%;
-  max-width: 20rem;
+  min-width: 100%;
+  left: 50%;
   margin: 0 auto;
   color: white;
-  background: rgba(0, 0, 0, 0.4);
   padding-bottom: 3rem;
   padding-top: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+header .more {
+  opacity: .4;
+  color: white;
+  position: absolute;
+  bottom: 6rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 1rem 2rem 1rem 2rem;
+  font-size: 2rem;
+  border: 1px solid #cdd4de;
+  border-radius: 5px;
+  width: 16rem;
 }
 
 .projects {
   position: relative;
   background-image: radial-gradient(circle, #06060f, #08070e, #09090d, #0b0b0d, #0c0c0c);
-  -webkit-transform: skewY(-22deg);
-          transform: skewY(-22deg);
-}
-
-.projects .unslant {
-  -webkit-transform: skewY(22deg);
-          transform: skewY(22deg);
 }
 
 .projects h2 {
-  padding-top: 4rem;
+  padding-top: 6rem;
   width: 100%;
   text-align: center;
   color: #ef2e5d;
@@ -68,8 +116,12 @@ header div {
 
 .projects p .underlight {
   font-size: .8rem;
-  color: #3a3939;
+  color: #66b0ff;
   margin-bottom: 3rem;
+}
+
+.projects .flexitems {
+  padding-bottom: 4rem;
 }
 
 @media (min-width: 900px) {
@@ -123,7 +175,7 @@ header div {
 }
 
 .about {
-  background-image: radial-gradient(circle, #06060f, #08070e, #09090d, #0b0b0d, #0c0c0c);
+  color: #333;
 }
 
 .about h2 {
@@ -170,6 +222,7 @@ header div {
 .about .newFlex h3 {
   text-align: center;
   font-size: 2.3rem;
+  padding-bottom: 1rem;
   color: #ef2e5d;
 }
 
@@ -182,11 +235,14 @@ header div {
 .about .newFlex ul {
   text-align: left;
   list-style-type: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .about .newFlex ul li {
   font-size: 1.3rem;
   font-weight: bold;
+  color: #66b0ff;
 }
 
 .about .newFlex p {
@@ -205,8 +261,9 @@ header div {
 .contact h2 {
   text-align: center;
   font-size: 3rem;
-  padding-top: 3rem;
+  padding-top: 6rem;
   padding-bottom: 2rem;
+  color: #66b0ff;
 }
 
 @media (min-width: 900px) {
@@ -245,12 +302,6 @@ header div {
   }
 }
 
-@media (min-width: 900px) {
-  .contact .contactTop {
-    margin: 0 2rem 0 2rem;
-  }
-}
-
 @media (min-width: 1200px) {
   .contact .contactTop {
     margin: 0 5%;
@@ -258,10 +309,13 @@ header div {
 }
 
 .contact .form {
-  width: 90%;
   margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
+}
+
+@media (min-width: 600px) {
+  .contact .form {
+    width: 90%;
+  }
 }
 
 @media (min-width: 900px) {
@@ -299,7 +353,7 @@ header div {
 }
 
 .contact #button {
-  background: white;
+  background: #ef2e5d;
   border: none;
   border-radius: 20px;
   font-weight: bold;
