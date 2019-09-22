@@ -98,7 +98,7 @@ header {
     position: relative;
     
     h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
         
     }
     p {
@@ -110,7 +110,7 @@ header {
         
             position: absolute;
             top: 7%;
-            
+            pointer-events: none;
             min-width: 100%;
             left: 50%;
             margin: 0 auto;
@@ -127,6 +127,7 @@ header {
         opacity: .4;
         color: white;
         position: absolute;
+        pointer-events: none;
         bottom: 6rem;
         left: 50%;
         transform: translateX(-50%);
@@ -164,6 +165,7 @@ header {
         padding-left: 20px;
         padding-right: 20px;
         color: white;
+        line-height: 1.6rem;
 
         .underlight {
             font-size: .8rem;
@@ -173,7 +175,7 @@ header {
     }
 
     .flexitems {
-       padding-bottom: 4rem;
+       padding-bottom: 6rem;
         @include tabletL {
             display: flex;
             flex: 1;
@@ -285,7 +287,7 @@ header {
         
         
         color: white;
-        padding-bottom: 3rem;
+        padding-bottom: 6rem;
         @include tabletM {
             flex: 1;
             min-width: 300px;
@@ -426,8 +428,8 @@ header {
     }
   
     #button {
-      background: #ef2e5d;
-      border: none;
+      background: transparent;
+      border: #ef2e5d 4px solid;
       border-radius: 20px;
       font-weight: bold;
       letter-spacing: 0.1rem;

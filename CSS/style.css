@@ -57,7 +57,7 @@ header {
 }
 
 header h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 
 header p {
@@ -67,6 +67,7 @@ header p {
 header .mainIntro {
   position: absolute;
   top: 7%;
+  pointer-events: none;
   min-width: 100%;
   left: 50%;
   margin: 0 auto;
@@ -83,6 +84,7 @@ header .more {
   opacity: .4;
   color: white;
   position: absolute;
+  pointer-events: none;
   bottom: 6rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -112,6 +114,7 @@ header .more {
   padding-left: 20px;
   padding-right: 20px;
   color: white;
+  line-height: 1.6rem;
 }
 
 .projects p .underlight {
@@ -121,7 +124,7 @@ header .more {
 }
 
 .projects .flexitems {
-  padding-bottom: 4rem;
+  padding-bottom: 6rem;
 }
 
 @media (min-width: 900px) {
@@ -219,7 +222,7 @@ header .more {
 
 .about .newFlex article {
   color: white;
-  padding-bottom: 3rem;
+  padding-bottom: 6rem;
 }
 
 @media (min-width: 650px) {
@@ -369,8 +372,8 @@ header .more {
 }
 
 .contact #button {
-  background: #ef2e5d;
-  border: none;
+  background: transparent;
+  border: #ef2e5d 4px solid;
   border-radius: 20px;
   font-weight: bold;
   letter-spacing: 0.1rem;
