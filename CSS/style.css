@@ -143,7 +143,6 @@ header .more {
 .projects article {
   width: 100%;
   height: 300px;
-  background-image: url("/Images/art50tiny.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -168,6 +167,22 @@ header .more {
   color: white;
   padding-left: 2rem;
   text-align: left;
+}
+
+.projects .bluebee {
+  background-image: url("/Images/bee.png");
+}
+
+.projects .bluebee1 {
+  background-image: url("/Images/sunsetscreenshot.png");
+}
+
+.projects .bluebee2 {
+  background-image: url("/Images/disaster.png");
+}
+
+.projects .bluebee3 {
+  background-image: url("/Images/port.png");
 }
 
 .projects .bluebee {
@@ -249,6 +264,7 @@ header .more {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 1rem;
+  line-height: 1.5rem;
 }
 
 /*********** CONTACT **********************************/
