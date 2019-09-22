@@ -73,6 +73,19 @@ html, body, * {
     padding-right: 5px;
 }
 
+@keyframes fade-in {
+    from {opacity: 0; transform: scale(.7, .7)}
+    to {opacity: 1;}
+}
+
+.fade-in-element{
+    animation: fade-in 1.4s;
+}
+
+.hidden {
+    opacity: 0;
+} 
+
 //////////////// LANDING PAGE ////////////////////
 
 html, body {
@@ -151,14 +164,22 @@ header {
     .unslant {
         
     }
-
-    h2 {
-        padding-top: 6rem;
-        width: 100%;
-        text-align: center;
-        color: #ef2e5d;
-        font-size: 3rem;
-    }
+   
+       
+        
+        
+            h2 {
+                
+                padding-top: 6rem;
+                width: 100%;
+                text-align: center;
+                color: #ef2e5d;
+                font-size: 3rem;
+            }
+        
+        
+      
+    
 
     p {
         text-align: center;
@@ -193,10 +214,12 @@ header {
     article {
         width: 100%;
         height: 300px;
-        
+        overflow: hidden;
+        position: relative;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        transition: all ease-in-out 300ms;
 
         
 
@@ -204,21 +227,69 @@ header {
             max-width: 450px;
             min-width: 300px;
             margin: 2rem;
+            border-radius: 10px;
+            
            
         }
 
-        h4 {
-            color: white;
-            padding-top: 3rem;
-            padding-left: 2rem;
-            font-size: 2rem;
+        .slideIn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateX(-450px);
+            transition: all ease-in-out 300ms;
+            h4 {
+                color: white;
+                padding-top: 3rem;
+                padding-left: 2rem;
+                font-size: 2rem;
+             } 
+
+             p {
+                color: white;
+                padding-left: 2rem;
+                text-align: left;
+               
+            }
+
         }
 
-        p {
-            color: white;
-            padding-left: 2rem;
-            text-align: left;
+        
+       
+    }
+
+    article:after {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(-450px);
+        width: 100%;
+        height: 100%;
+        background: #ef2e5d;
+        opacity: .5;
+        z-index: 2;
+        transition: all ease-in-out 300ms;
+
+        
+    }
+
+    article:hover {
+
+        .slideIn {
+            transform: translateX(0px);
+            z-index: 3;
         }
+        
+    }
+
+    article:hover:after {
+        
+            transform: translateX(0px);
+        z-index: 2;
+        
+        
     }
 
     .bluebee {
@@ -287,6 +358,7 @@ header {
         
         
         color: white;
+
         padding-bottom: 6rem;
         @include tabletM {
             flex: 1;
@@ -294,6 +366,7 @@ header {
             max-width: 450px;
             margin-left: 1rem;
             margin-right: 1rem;
+           
         }
         }
         h3 {
