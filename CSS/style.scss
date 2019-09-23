@@ -84,6 +84,7 @@ html, body, * {
 
 .hidden {
     opacity: 0;
+    
 } 
 
 //////////////// LANDING PAGE ////////////////////
@@ -155,7 +156,7 @@ header {
 /////////////// PROJECTS ////////////////
 
 .projects {
-    position: relative;
+    
     background-image: radial-gradient(circle, #06060f, #08070e, #09090d, #0b0b0d, #0c0c0c);
 
     
@@ -171,10 +172,13 @@ header {
             h2 {
                 
                 padding-top: 6rem;
-                width: 100%;
+                padding-bottom: 3rem;
+               
                 text-align: center;
                 color: #ef2e5d;
                 font-size: 3rem;
+                
+               
             }
         
         

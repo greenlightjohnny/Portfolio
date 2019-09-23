@@ -18,38 +18,62 @@ background.addEventListener('mousemove', changeP)
 /////// Fade in on scroll //////////
 
 
-let elements = document.querySelectorAll('.hidden');
+let slideItems = document.querySelectorAll('.hidden');
+let first = document.querySelector('.fix');
 
+function slideIn() {
+    console.log(  window.scrollY + window.innerHeight);
+    console.log('first item ' + first.getBoundingClientRect().top) + document.documentElement.scrollTop;
+    slideItems.forEach(i => {
 
-
-
-function checkHeight() {
-    
-    let testt = document.querySelector('.fix');
-    console.log(testt);
-    console.log(window.scrollY + window.innerHeight);
-    console.log(testt.offsetHeight);
-    console.log(testt.offsetTop);
-
-    elements.forEach(i => {
-        const slideInAt = (window.scrollY + window.innerHeight) - i.offsetHeight;
-       
-        const imageBottom = i.offsetTop + i.offsetHeight;
-        
-        const isHalfShow = slideInAt > i.offsetTop;
-       
-        const isNotPast = window.scrollY < imageBottom;
-        
-
-        if(isHalfShow && isNotPast) {
-            i.classList.add('fade-in-element');
+        if(i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop <  window.scrollY + window.innerHeight ) {
             i.classList.remove('hidden');
+            i.classList.add('fade-in-element');
+            
         } else {
-            i.classList.remove('fade-in-element');
             i.classList.add('hidden');
+            i.classList.remove('fade-in-element');
         }
+        
 
     })
+}
+
+window.addEventListener('scroll', slideIn);
+
+// let elements = document.querySelectorAll('.hidden');
+
+
+
+
+// function checkHeight() {
+    
+   
+
+//     elements.forEach(i => {
+//         const slideInAt = (window.scrollY + window.innerHeight) - i.offsetHeight;
+       
+//         const imageBottom = i.offsetTop + i.offsetHeight;
+        
+//         const isHalfShow = slideInAt > i.offsetTop;
+       
+//         const isNotPast = window.scrollY < imageBottom;
+        
+
+//         if(isHalfShow && isNotPast) {
+//             i.classList.add('fade-in-element');
+//             i.classList.remove('hidden');
+//         } else {
+//             i.classList.remove('fade-in-element');
+//             i.classList.add('hidden');
+//         }
+
+// });
+// };
+
+// window.addEventListener('scroll', checkHeight);
+// window.addEventListener('resize', checkHeight);
+
     // let windowHeight = window.innerHeight;
     // for(let i = 0; i < elements.length; i++) {
     //     let element = elements[i];
@@ -65,8 +89,9 @@ function checkHeight() {
     //         element.classList.add('hidden');
     //     }
     // }
-}
 
 
-window.addEventListener('scroll', checkHeight);
-window.addEventListener('resize', checkHeight);
+
+
+
+
