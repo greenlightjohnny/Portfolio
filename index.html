@@ -30,9 +30,9 @@
     <section class="projects">
         
             <h2 class="hidden fade-in fix">Projects</h2>
-            <p>Straight to it. Here are some samples of what I can <br> create with HTML, CSS, and JavaScript <br>
+            <p class="topP">Straight to it. Here are some samples of what I can <br> create with HTML, CSS, and JavaScript <br>
             </p>
-            <p><span class="underlight">(Spoiler alert: Not much (yet))</span></p>
+            
             <div class="flexitems">
             <article class="bluebee">
                 <div class="slideIn">
@@ -44,14 +44,14 @@
             <article class="bluebee1">
                 <div class="slideIn">
                 <h4>Sunset Riverside</h4>
-                <p>Short website about living in Vietnam</p>
+                <p>Short informational website about a new housing devolopment in Vietnam that I created for practice </p>
             </div>
             </article>
 
             <article class="bluebee2">
                 <div class="slideIn">
                 <h4>Wix Rebuild</h4>
-                <p>Rebuild an old wix site</p>
+                <p>Started to rebuild a disaster of a Wix site as a favor to a random editor, only to have them abandon the project midway through. Leaving it up just to make my portfolio appear bigger</p>
             </div>
             </article>
 
@@ -101,35 +101,35 @@
      <!--------------------CONTACT--------------------------------->
      <section class="contact" id="contact">
             <h2 class="hidden fade=in">Contact </h2>
-            <div class="contactFlex">
-                <div class="contactTop">
-                    <p>Hey, I just learned web dev and this is crazy, but here's my number, so hire me maybe <br>
-                        <div class="padding">
-                            <span class="phone">&phone;</span> <a href="tel:+01-540-222-2222">(540) 333-3333</a><br>
-
-                            <span class="phone">&#9993;</span> <a href="mailto:mingap@mingap.com">mingap@mingap.com</a>
-                        </div>
-                    </p>
-                </div>
-
-                <div class="form">
-                    <form id="contactform" action="//formspree.io/castelloiv@gmail.com" method="POST">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" id="name" placeholder="Brad Pitt">
-
-                        <label for="email">Email</label>
-                        <input type="email" name="_replyto" id="email" placeholder="me@gmail.com">
-
-                        <label for="text">Message</label>
-                        <textarea name="message" id="text" placeholder="Ask us anything!"></textarea>
-                        <label for="button"></label>
-                        <input id="button" type="submit" value="Send">
-                    </form>
-                </div>
+            <div class="flexC">
+            <div class="callMe">
+                <P>Feel free to use the form or contact me directly</P>
             </div>
+
+            <form action="">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="user_name">
+                </div>
+
+                <div>
+                    <label for="maile">Email:</label>
+                    <input type="email" name="user_mail" id="mail">
+                </div>
+                <div>
+                    <label for="msg">Message:</label>
+                    <textarea name="user_message" id="msg" cols="30" rows="10"></textarea>
+                </div>
+
+                <div class="button">
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+        </div>
         </section>
 </main>
 <footer>
+    <p>Fred Jones &copy; 2019</p>
 
 </footer>
 <script src="/JS/javascript.js"></script>
