@@ -11,8 +11,18 @@ function changeP(e) {
     background.style.transform = `translate3D(-${mouseX}%, -${mouseY}%, 0)`
 };
 
+function moveSlow() {
+    background.classList.add('slow');
+    background.style.transform = `translate3D(0, 0, 0)`
+}
 
-background.addEventListener('mousemove', changeP)
+function removeSlow() {
+    background.classList.remove('slow');
+}
+
+background.addEventListener('mouseenter', removeSlow);
+background.addEventListener('mousemove', changeP);
+background.addEventListener('mouseleave', moveSlow);
 
 
 /////// Fade in on scroll //////////

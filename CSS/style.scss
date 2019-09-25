@@ -87,12 +87,18 @@ html, body, * {
     
 } 
 
+.slow {
+    transition: all ease-in 400ms;
+}
+
 //////////////// LANDING PAGE ////////////////////
 
 html, body {
     background: black;
     
 }
+
+
 
 .backgroundImage {
     background-image: url('/Images/Robert\ 0368.JPG');
@@ -104,12 +110,15 @@ html, body {
     position: absolute;
     top: 0;
     left: 0;
+    
+    
 }
 header {
     text-align: center;
     height: 100vh;
     overflow: hidden;
     position: relative;
+   
     
     h1 {
         font-size: 3.5rem;
@@ -430,13 +439,36 @@ header {
 
 
     .flexC {
+        padding-bottom: 3rem;
+        @include tabletL {
+        width: 90%;
+        margin: 0 auto;
         display: flex;
-        flex-wrap: wrap;
+       
+        justify-content: center;
         flex: 1;
+        }
     }
 
     .callMe {
-        max-width: 400px;
+        width: 90%;
+        min-width: 300px;
+        margin: 0 auto;
+        margin-bottom: 4rem;
+
+        p {
+            padding-bottom: 2rem;
+        }
+        @include tabletM {
+            
+            max-width: 450px;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        @include tabletL {
+            margin: 0;
+        }
     }
     
     h2 {
@@ -452,27 +484,35 @@ header {
     color: white;
 
 
-    form {
+    .form {
         margin: 0 auto;
-        width: 100%;
-        flex: 1;
+        width: 90%;
+        min-width: 300px;
+    
         margin-bottom: 3rem;
+
+        @include tabletM {
+            
+            max-width: 450px;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        @include tabletL {
+            margin: 0;
+        }
     }
 
     form div + div {
         margin-top: 1rem;
     }
 
-    div {
-        
-        width: 300px;
-        margin: 0 auto;
-    }
+    
 
     label {
         display: inline-block;
         text-align: left;
-        width: 76.16px;
+        width: 100%;
         font-size: 1.1rem;
         margin-bottom: .3rem;
     }
@@ -484,8 +524,7 @@ header {
     input, textarea {
        
         font-family: 'rubik';
-        max-width: 400px;
-        min-width: 300px;
+        width: 100%;
         background: transparent;
         
         border: 1px solid #fdfdfd;
