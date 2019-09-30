@@ -5,10 +5,15 @@ const windowH = window.innerHeight / 5;
 
 function changeP(e) {
     
-    const mouseX = e.clientX / windowW;
+    if(background.classList.contains('slow')) {
+        return;
+    } else {
+        const mouseX = e.clientX / windowW;
     const mouseY = e.clientY / windowH;
     
     background.style.transform = `translate3D(-${mouseX}%, -${mouseY}%, 0)`
+    }
+    
 };
 
 function moveSlow() {
@@ -16,8 +21,19 @@ function moveSlow() {
     background.style.transform = `translate3D(0, 0, 0)`
 }
 
-function removeSlow() {
-    background.classList.remove('slow');
+function removeSlow(e) {
+    console.log('jmmm');
+
+  
+   
+
+    
+    setTimeout(function() {
+        
+        background.classList.remove('slow');
+    }, 300)
+   
+
 }
 
 background.addEventListener('mouseenter', removeSlow);
@@ -31,9 +47,18 @@ background.addEventListener('mouseleave', moveSlow);
 let slideItems = document.querySelectorAll('.hidden');
 let first = document.querySelector('.fix');
 
+
 function slideIn() {
-    console.log(  window.scrollY + window.innerHeight);
-    console.log('first item ' + first.getBoundingClientRect().top) + document.documentElement.scrollTop;
+    let showNav = document.querySelector('.navShow');
+    let nav = document.querySelector('nav');
+    console.log('scroll Y ' + window.scrollY);
+    console.log(window.innerHeight);
+    if(window.scrollY > window.innerHeight) {
+        nav.classList.add('navShow');
+    } else {
+        nav.classList.remove('navShow');
+    }
+    
     slideItems.forEach(i => {
 
         if(i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop <  window.scrollY + window.innerHeight ) {
@@ -50,6 +75,26 @@ function slideIn() {
 }
 
 window.addEventListener('scroll', slideIn);
+
+
+
+///////// Animate menu button ///////////
+
+const ham = document.querySelector('.ham');
+const mIcon = document.querySelector('.mIcon');
+const ul = document.querySelector('ul');
+const nav = document.querySelector('nav');
+
+ham.addEventListener('click', animateMenu);
+
+function animateMenu() {
+    mIcon.classList.toggle('animate');
+    ul.classList.toggle('ulShow');
+    nav.classList.toggle('expand');
+
+}
+
+
 
 // let elements = document.querySelectorAll('.hidden');
 

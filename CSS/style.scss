@@ -88,7 +88,180 @@ html, body, * {
 } 
 
 .slow {
-    transition: all ease-in 400ms;
+    transition: all ease-in-out 200ms;
+}
+
+.navShow {
+    opacity: 1;
+    transition: all ease-in-out .5s;
+    pointer-events: all;
+    font-size: 1rem;
+    
+}
+
+.navHeight {
+    height: 100vh;
+}
+.ulShow {
+    height: auto;
+    opacity: 1;
+    transition: all ease-in-out 400ms;
+    padding-top: 8rem;
+}
+
+
+nav {
+    opacity: 0;
+    height: 50px;
+    overflow-y: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    background: rgba(0, 0, 0, .9);
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    transition: opacity ease-in-out 400ms;
+    transition: height .4s linear;
+
+
+    @include tabletL {
+        
+    }
+
+    
+
+    .logo {
+        width: 50px;
+        height: 50px;
+        border: 2px solid #66b0ff;
+        margin-left: 5%;
+        color: white;
+        font-size: 2rem;
+        vertical-align: center;
+    }
+
+
+    .ham {
+        display: inline-block;
+        margin-right: 5%;
+        
+        width: 50px;
+        height: 50px;
+
+        @include tabletL {
+            display: none;
+        }
+        
+    }
+
+    .mIcon,
+    .mIcon:after,
+    .mIcon:before {
+        height: 7px;
+        width: 100%;
+        border-radius: 3px;
+
+    }
+
+    .mIcon {
+        position: relative;
+        transform: translateY(20px);
+        background: #66b0ff;
+        transition: all 0ms 300ms;
+
+        &.animate {
+            background: rgba(255, 255, 255, 0);
+        }
+    }
+
+    .mIcon:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 15px;
+        background: #66b0ff;
+        transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+
+    }
+
+    .mIcon:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 15px;
+        background: #66b0ff;
+        transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+
+    }
+
+    .mIcon.animate:after {
+        top: 0;
+        transform: rotate(45deg);
+        background: #ef2e5d;
+        transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);;
+    }
+
+    .mIcon.animate:before {
+        bottom: 0;
+        transform: rotate(-45deg);
+        background: #ef2e5d;
+        transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);;
+    }
+    ul {
+        list-style-type: none;
+        color: white;
+        display: inline-block;
+        
+        
+        height: 0;
+        opacity: 0;
+        transition: all ease-in-out 400ms;
+
+
+        @include tabletL {
+            display: inline-block;
+            margin-left: 50%;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            height: inherit;
+        }
+       
+        
+    }
+
+   
+
+    li {
+        display: block;
+       
+        
+        padding-bottom: 2rem;
+        font-size: 2rem;
+        :nth-child(odd) {
+            transform: translateX(-200px);
+        }
+        
+
+        @include tabletL {
+            display: inline-block;
+            padding-bottom: 0;
+            padding-right: 1rem;
+            font-size: 1.3rem;
+        }
+
+
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+nav.expand {
+    height: 100vh;
 }
 
 //////////////// LANDING PAGE ////////////////////
