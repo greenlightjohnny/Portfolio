@@ -93,9 +93,10 @@ html, body, * {
 
 .navShow {
     opacity: 1;
-    transition: all ease-in-out .5s;
+    transition: opacity ease-in-out .4s;
     pointer-events: all;
     font-size: 1rem;
+    transition: height .4s linear;
     
 }
 

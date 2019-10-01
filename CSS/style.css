@@ -71,10 +71,12 @@ html, body, * {
 
 .navShow {
   opacity: 1;
-  -webkit-transition: all ease-in-out .5s;
-  transition: all ease-in-out .5s;
+  -webkit-transition: opacity ease-in-out .4s;
+  transition: opacity ease-in-out .4s;
   pointer-events: all;
   font-size: 1rem;
+  -webkit-transition: height .4s linear;
+  transition: height .4s linear;
 }
 
 .navHeight {
