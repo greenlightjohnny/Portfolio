@@ -46,10 +46,12 @@ background.addEventListener('mouseleave', moveSlow);
 
 let slideItems = document.querySelectorAll('.hidden');
 let first = document.querySelector('.fix');
+let skillList = document.querySelectorAll('.slideUp');
+console.log(skillList);
 
 
 function slideIn() {
-    let showNav = document.querySelector('.navShow');
+   
     let nav = document.querySelector('nav');
     console.log('scroll Y ' + window.scrollY);
     console.log(window.innerHeight);
@@ -61,7 +63,7 @@ function slideIn() {
     
     slideItems.forEach(i => {
 
-        if(i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop <  window.scrollY + window.innerHeight ) {
+        if(i.getBoundingClientRect().top + i.scrollHeight / .5 + document.documentElement.scrollTop <  window.scrollY + window.innerHeight ) {
             i.classList.remove('hidden');
             i.classList.add('fade-in-element');
             
@@ -71,6 +73,14 @@ function slideIn() {
         }
         
 
+    })
+
+    skillList.forEach(i => {
+        if(i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
+            i.classList.add('inView')
+        } else {
+            i.classList.remove('inView');
+        }
     })
 }
 

@@ -97,6 +97,8 @@ html, body, * {
     pointer-events: all;
     font-size: 1rem;
     transition: height .4s linear;
+    pointer-events: all;
+    
     
 }
 
@@ -113,6 +115,7 @@ html, body, * {
 
 nav {
     opacity: 0;
+    pointer-events: none;
     height: 50px;
     overflow-y: hidden;
     position: fixed;
@@ -226,7 +229,9 @@ nav {
             margin-left: 50%;
             padding-top: 1rem;
             padding-bottom: 1rem;
-            height: inherit;
+            height: auto;
+            opacity: 1;
+            margin-right: 5%;
         }
        
         
@@ -257,6 +262,13 @@ nav {
         a {
             text-decoration: none;
             color: white;
+            transition: color ease-in-out 400ms;
+
+        }
+
+        a:hover {
+            color: #66b0ff;
+            transition: color 400ms ease-in-out;
         }
     }
 }
@@ -405,7 +417,11 @@ header {
         
     }
 
-    
+    .inView {
+        transform: translateY(0);
+        opacity: 1;
+        color: white;
+    }
 
     article {
         width: 100%;
@@ -419,6 +435,10 @@ header {
         background-repeat: no-repeat;
         transition: all ease-in-out 300ms;
         border-radius: 10px;
+        transform: translateY(1.6rem * 2);
+        opacity: 0;
+        transition: opacity 300ms, transform 300ms;
+    
 
         
 
@@ -555,8 +575,7 @@ header {
 
     article {
         
-        
-        color: white;
+      
 
         padding-bottom: 6rem;
         @include tabletM {
@@ -578,6 +597,17 @@ header {
             }
         }
 
+        .slideUp {
+            transform: translateY(1.6rem * 2);
+            opacity: 0;
+            transition: opacity 300ms, transform 300ms;
+        }
+
+        .inView {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
         ul {
             text-align: left;
            list-style-type: none;
@@ -595,6 +625,7 @@ header {
            padding-right: 1rem;
            padding-bottom: 1rem;
            line-height: 1.5rem;
+           color: white;
         }
     }
 }
