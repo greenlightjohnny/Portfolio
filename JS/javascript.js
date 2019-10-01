@@ -47,6 +47,8 @@ background.addEventListener('mouseleave', moveSlow);
 let slideItems = document.querySelectorAll('.hidden');
 let first = document.querySelector('.fix');
 let skillList = document.querySelectorAll('.slideUp');
+let slideLeft = document.querySelectorAll('.slideLeft');
+let slideRight = document.querySelectorAll('.slideRight');
 console.log(skillList);
 
 
@@ -63,7 +65,7 @@ function slideIn() {
     
     slideItems.forEach(i => {
 
-        if(i.getBoundingClientRect().top + i.scrollHeight / .5 + document.documentElement.scrollTop <  window.scrollY + window.innerHeight ) {
+        if(i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop <  window.scrollY + window.innerHeight ) {
             i.classList.remove('hidden');
             i.classList.add('fade-in-element');
             
@@ -80,6 +82,22 @@ function slideIn() {
             i.classList.add('inView')
         } else {
             i.classList.remove('inView');
+        }
+    })
+
+    slideRight.forEach(i => {
+        if(i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
+            i.classList.add('fromRight')
+        } else {
+            i.classList.remove('fromRight')
+        }
+    })
+
+    slideLeft.forEach(i => {
+        if(i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
+            i.classList.add('fromLeft')
+        } else {
+            i.classList.remove('fromLeft')
         }
     })
 }

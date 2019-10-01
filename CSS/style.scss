@@ -56,19 +56,26 @@ html, body, * {
     }
   }
 
+  $pinkish: #ef2e5d;
+  $bluish: #66b0ff;
+  $white: white;
+  $black: black;
+
+
+
   .highlightOne {
-      background: #ef2e5d;
+      background: $pinkish;
       padding-left: 1rem;
       padding-right: 1rem;
   }
 
   .highlightTwo {
-      background: #66b0ff;
+      background: $bluish;
       padding-left: 5px;
       padding-right: 5px;
   }
   .highlightOne1 {
-    background: #ef2e5d;
+    background: $pinkish;
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -139,7 +146,7 @@ nav {
     .logo {
         width: 50px;
         height: 50px;
-        border: 2px solid #66b0ff;
+        border: 2px solid $bluish;
         margin-left: 5%;
         color: white;
         font-size: 2rem;
@@ -172,7 +179,7 @@ nav {
     .mIcon {
         position: relative;
         transform: translateY(20px);
-        background: #66b0ff;
+        background: $bluish;
         transition: all 0ms 300ms;
 
         &.animate {
@@ -185,7 +192,7 @@ nav {
         position: absolute;
         left: 0;
         bottom: 15px;
-        background: #66b0ff;
+        background: $bluish;
         transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
 
     }
@@ -195,7 +202,7 @@ nav {
         position: absolute;
         left: 0;
         top: 15px;
-        background: #66b0ff;
+        background: $bluish;
         transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
 
     }
@@ -203,14 +210,14 @@ nav {
     .mIcon.animate:after {
         top: 0;
         transform: rotate(45deg);
-        background: #ef2e5d;
+        background: $pinkish;
         transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);;
     }
 
     .mIcon.animate:before {
         bottom: 0;
         transform: rotate(-45deg);
-        background: #ef2e5d;
+        background: $pinkish;
         transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);;
     }
     ul {
@@ -267,7 +274,7 @@ nav {
         }
 
         a:hover {
-            color: #66b0ff;
+            color: $bluish;
             transition: color 400ms ease-in-out;
         }
     }
@@ -352,14 +359,13 @@ header {
 
 .projects {
     
-    background-image: radial-gradient(circle, #06060f, #08070e, #09090d, #0b0b0d, #0c0c0c);
+    background: #f0f0f0;
+    //background-image: radial-gradient(circle, #06060f, #08070e, #09090d, #0b0b0d, #0c0c0c);
 
     
     
 
-    .unslant {
-        
-    }
+  
    
        
         
@@ -370,7 +376,7 @@ header {
                 padding-bottom: 1rem;
                
                 text-align: center;
-                color: #ef2e5d;
+                color: $pinkish;
                 font-size: 3rem;
                 
                
@@ -378,6 +384,9 @@ header {
         
             .topP {
                 padding-bottom: 1rem;
+                transform: translateY(1.6rem * 2);
+                transition: transform 300ms, opacity 300ms;
+                opacity: 0;
             }
         
       
@@ -387,12 +396,12 @@ header {
         text-align: center;
         padding-left: 20px;
         padding-right: 20px;
-        color: white;
+        color: $black;
         line-height: 1.6rem;
 
         .underlight {
             font-size: .8rem;
-            color: #66b0ff;
+            color: $bluish;
             margin-bottom: 3rem;
         }
     }
@@ -420,7 +429,7 @@ header {
     .inView {
         transform: translateY(0);
         opacity: 1;
-        color: white;
+        color: $black;
     }
 
     article {
@@ -438,6 +447,9 @@ header {
         transform: translateY(1.6rem * 2);
         opacity: 0;
         transition: opacity 300ms, transform 300ms;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+    
     
 
         
@@ -465,7 +477,7 @@ header {
              } 
 
              p {
-                color: white;
+                color: $white;
                 padding-left: 2rem;
                 text-align: left;
                
@@ -486,7 +498,7 @@ header {
         transform: translateX(-450px);
         width: 100%;
         height: 100%;
-        background: #66b0ff;
+        background: $black;
         opacity: .7;
         z-index: 2;
         transition: all ease-in-out 300ms;
@@ -495,7 +507,7 @@ header {
     }
 
     article:hover {
-
+        transform: scale(1.1);
         .slideIn {
             transform: translateX(0px);
             z-index: 3;
@@ -554,9 +566,11 @@ header {
 ////////////// About /////////////////////////////////////////////
 
 .about {
+    background: #fdfdfd;
     color: #333;
+
     h2 {
-        color: white;
+        color: $black;
         text-align: center;
         
         font-size: 3rem;
@@ -576,7 +590,8 @@ header {
     article {
         
       
-
+        overflow-x: hidden;
+        background: #fdfdfd;
         padding-bottom: 6rem;
         @include tabletM {
             flex: 1;
@@ -584,18 +599,51 @@ header {
             max-width: 450px;
             margin-left: 1rem;
             margin-right: 1rem;
+            border: 1px solid black;
+            margin-bottom: -5rem;
+            
            
         }
         }
+
+        .slideRight {
+            transform: translateX(-10rem);
+            transition: transform 300ms, opacity 300ms;
+            opacity: 0; 
+            overflow-x: hidden;
+        }
+
+        .slideLeft {
+            transform: translateX(10rem);
+            transition: transform 300ms, opacity 300ms;
+            opacity: 0; 
+            overflow-x: hidden;
+        }
+
+        .fromRight {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .fromLeft {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        
+
         h3 {
+            
             text-align: center;
             font-size: 2.3rem;
             padding-bottom: 1rem;
-            color: #ef2e5d;
+            color: $pinkish;
             @include tabletM {
                 padding-bottom: 1rem;
             }
         }
+
+        
 
         .slideUp {
             transform: translateY(1.6rem * 2);
@@ -616,7 +664,13 @@ header {
            li {
                font-size: 1.3rem;
                font-weight: bold;
-               color: #66b0ff;
+               color: $bluish;
+
+               .high2 {
+                   background: $bluish;
+                   padding: 0 9px 0 9px;
+                   color: white;
+               }
            }
         }
 
@@ -625,7 +679,7 @@ header {
            padding-right: 1rem;
            padding-bottom: 1rem;
            line-height: 1.5rem;
-           color: white;
+           color: $black;
         }
     }
 }
@@ -641,6 +695,7 @@ header {
   
 .contact {
     background: #1f1f1f;
+    
 
 
     .flexC {
@@ -679,9 +734,9 @@ header {
     h2 {
         text-align: center;
         font-size: 3rem;
-        padding-top: 6rem;
+        padding-top: 10rem;
         padding-bottom: 2rem;
-        color: #66b0ff;
+        color: $bluish;
         
     }
     
@@ -742,7 +797,7 @@ header {
 
     input:focus, textarea:focus {
         outline: none;
-        border: 1px solid #66b0ff;
+        border: 1px solid $bluish;
     }
 
     .button {
@@ -754,7 +809,7 @@ header {
         width: 10rem;
         color: #fff;
         font-size: 1.4rem;
-        background-color: #ef2e5d;
+        background-color: $pinkish;
         border: transparent;
         border-radius: 5px;
     }
