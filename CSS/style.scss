@@ -99,13 +99,18 @@ html, body, * {
 }
 
 .navShow {
-    opacity: 1;
-    transition: opacity ease-in-out .4s;
+    
+    
     pointer-events: all;
     font-size: 1rem;
     transition: height .4s linear;
     pointer-events: all;
-    
+    opacity: 1;
+    transition: all ease-in-out 1s;
+    transition: height 700ms linear;
+    height: 50px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
     
 }
 
@@ -123,17 +128,17 @@ html, body, * {
 nav {
     opacity: 0;
     pointer-events: none;
-    height: 50px;
+    height: 0;
     overflow-y: hidden;
     position: fixed;
     top: 0;
     z-index: 3;
     width: 100%;
-    background: rgba(0, 0, 0, .9);
+    background: rgba(255, 255, 255, .9);
     font-size: 1.3rem;
     display: flex;
     justify-content: space-between;
-    transition: opacity ease-in-out 400ms;
+    transition: all ease-in-out 1s;
     transition: height .4s linear;
 
 
@@ -146,9 +151,11 @@ nav {
     .logo {
         width: 50px;
         height: 50px;
-        border: 2px solid $bluish;
+        
         margin-left: 5%;
-        color: white;
+        color: black;
+        font-weight: bold;
+        
         font-size: 2rem;
         vertical-align: center;
     }
@@ -268,7 +275,7 @@ nav {
 
         a {
             text-decoration: none;
-            color: white;
+            color: $black;
             transition: color ease-in-out 400ms;
 
         }
@@ -282,6 +289,7 @@ nav {
 
 nav.expand {
     height: 100vh;
+    transition: height 400ms linear;
 }
 
 //////////////// LANDING PAGE ////////////////////
@@ -358,8 +366,8 @@ header {
 /////////////// PROJECTS ////////////////
 
 .projects {
-    
-    background: #f0f0f0;
+    background: #f2f2f2;
+    //background: #f0f0f0;
     //background-image: radial-gradient(circle, #06060f, #08070e, #09090d, #0b0b0d, #0c0c0c);
 
     
@@ -393,17 +401,16 @@ header {
     
 
     p {
-        text-align: center;
+        text-align: left;
         padding-left: 20px;
         padding-right: 20px;
         color: $black;
         line-height: 1.6rem;
 
-        .underlight {
-            font-size: .8rem;
-            color: $bluish;
-            margin-bottom: 3rem;
+        @include tabletM {
+            text-align: center;
         }
+       
     }
 
     .flexitems {
@@ -470,7 +477,7 @@ header {
             transform: translateX(-450px);
             transition: all ease-in-out 300ms;
             h4 {
-                color: white;
+                color: $pinkish;
                 padding-top: 3rem;
                 padding-left: 2rem;
                 font-size: 2rem;
@@ -599,8 +606,9 @@ header {
             max-width: 450px;
             margin-left: 1rem;
             margin-right: 1rem;
-            border: 1px solid black;
+            border-radius: 5px;
             margin-bottom: -5rem;
+            box-shadow: 0 0 10px;
             
            
         }
@@ -640,6 +648,7 @@ header {
             color: $pinkish;
             @include tabletM {
                 padding-bottom: 1rem;
+                padding-top: 1rem;
             }
         }
 
@@ -690,7 +699,15 @@ header {
 /*********** CONTACT **********************************/
 
 
-
+.slideUp {
+    transform: translateY(1.6rem * 2);
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+}
+.inView {
+    transform: translateY(0);
+    opacity: 1;
+}
 
   
 .contact {
@@ -718,6 +735,7 @@ header {
 
         p {
             padding-bottom: 2rem;
+            
         }
         @include tabletM {
             
@@ -734,9 +752,13 @@ header {
     h2 {
         text-align: center;
         font-size: 3rem;
-        padding-top: 10rem;
+        padding-top: 6rem;
         padding-bottom: 2rem;
         color: $bluish;
+
+        @include tabletM {
+            padding-top: 10rem;
+        }
         
     }
     
@@ -805,13 +827,15 @@ header {
     }
 
     button {
-        margin-left: .5rem;
+        
         width: 10rem;
-        color: #fff;
+        color: $white;
+        font-weight: bold;
         font-size: 1.4rem;
-        background-color: $pinkish;
+        background-color: $bluish;
         border: transparent;
-        border-radius: 5px;
+        border-radius: 9px;
+        letter-spacing: .3rem;
     }
   
     
