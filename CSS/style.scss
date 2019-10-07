@@ -596,9 +596,9 @@ header {
 
     article {
         
-      
+        position: relative;
         overflow-x: hidden;
-        background: #fdfdfd;
+        background: white;
         padding-bottom: 6rem;
         @include tabletM {
             flex: 1;
@@ -611,6 +611,21 @@ header {
             box-shadow: 0 0 10px;
             
            
+        }
+
+        .sideways {
+            position: absolute;
+            top: 25px;
+            text-align: center;
+            right: -40px;
+            border: 1px solid #e1e3e4;
+            font-size: .8rem;
+            padding-bottom: .5rem;
+            padding-top: .5rem;
+            transform: rotate(45deg);
+            width: 160px;
+            background: $bluish;
+            
         }
         }
 
@@ -644,16 +659,31 @@ header {
             
             text-align: center;
             font-size: 2.3rem;
-            padding-bottom: 1rem;
+            
             color: black;
+            width: 160px;
+            
+            
+            
+            background: linear-gradient(to top, $pinkish 40%, transparent 20%);
+            
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 1rem;
+            
+
             @include tabletM {
-                padding-bottom: 1rem;
-                padding-top: 1rem;
+               
+                margin-top: 1rem;
             }
         }
 
+        h3:after {
+            content: '';
+        }
+
         .high3 {
-            color: $pinkish;
+            
         }
 
         
@@ -745,27 +775,38 @@ header {
         margin: 0 auto;
         margin-bottom: 4rem;
         position: relative;
+        overflow: hidden;
 
         h3 {
             font-size: 2rem;
            position: relative;
+           text-align: center;
+
+           @include tabletM {
+            text-align: left;
+           }
            
         }
 
         h3:after {
             content: "";
-            max-width: 400px;
-            min-width: 250px;
+            width: 100%;
+            
             position: absolute;
             height: 2px;
-            left: 0;
+            left: 10%;
             bottom: -10px;
-            background: linear-gradient(to right, $pinkish 50%, transparent);
+            background: linear-gradient(to right, $bluish 20%, transparent 80%);
+
+            @include tabletM {
+                left: 0px;
+            }
         }
 
         p {
             padding-bottom: 2rem;
             padding-top: 3rem;
+            padding-right: 2.5rem;
             
         }
         @include tabletM {
@@ -846,6 +887,11 @@ header {
         color: #fff;
         
         line-height: 2rem;
+        border: 1px solid $pinkish;
+    }
+
+    input {
+        border: 1px solid $pinkish;
     }
 
     input:focus, textarea:focus {
@@ -860,13 +906,18 @@ header {
     button {
         
         width: 10rem;
-        color: $white;
+        color: $bluish;
         font-weight: bold;
         font-size: 1.4rem;
-        background-color: $bluish;
+        background-color: $white;
         border: transparent;
         border-radius: 9px;
         letter-spacing: .3rem;
+        text-transform: uppercase;
+    }
+
+    button:hover {
+        cursor: pointer;
     }
   
     

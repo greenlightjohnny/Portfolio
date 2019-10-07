@@ -549,8 +549,9 @@ header .more {
 }
 
 .about .newFlex article {
+  position: relative;
   overflow-x: hidden;
-  background: #fdfdfd;
+  background: white;
   padding-bottom: 6rem;
 }
 
@@ -568,6 +569,21 @@ header .more {
     -webkit-box-shadow: 0 0 10px;
             box-shadow: 0 0 10px;
   }
+}
+
+.about .newFlex article .sideways {
+  position: absolute;
+  top: 25px;
+  text-align: center;
+  right: -40px;
+  border: 1px solid #e1e3e4;
+  font-size: .8rem;
+  padding-bottom: .5rem;
+  padding-top: .5rem;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  width: 160px;
+  background: #66b0ff;
 }
 
 .about .newFlex .slideRight {
@@ -607,19 +623,23 @@ header .more {
 .about .newFlex h3 {
   text-align: center;
   font-size: 2.3rem;
-  padding-bottom: 1rem;
   color: black;
+  width: 160px;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(40%, #ef2e5d), color-stop(20%, transparent));
+  background: linear-gradient(to top, #ef2e5d 40%, transparent 20%);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 650px) {
   .about .newFlex h3 {
-    padding-bottom: 1rem;
-    padding-top: 1rem;
+    margin-top: 1rem;
   }
 }
 
-.about .newFlex .high3 {
-  color: #ef2e5d;
+.about .newFlex h3:after {
+  content: '';
 }
 
 .about .newFlex .slideUp {
@@ -715,28 +735,42 @@ header .more {
   margin: 0 auto;
   margin-bottom: 4rem;
   position: relative;
+  overflow: hidden;
 }
 
 .contact .callMe h3 {
   font-size: 2rem;
   position: relative;
+  text-align: center;
+}
+
+@media (min-width: 650px) {
+  .contact .callMe h3 {
+    text-align: left;
+  }
 }
 
 .contact .callMe h3:after {
   content: "";
-  max-width: 400px;
-  min-width: 250px;
+  width: 100%;
   position: absolute;
   height: 2px;
-  left: 0;
+  left: 10%;
   bottom: -10px;
-  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ef2e5d), to(transparent));
-  background: linear-gradient(to right, #ef2e5d 50%, transparent);
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, #66b0ff), color-stop(80%, transparent));
+  background: linear-gradient(to right, #66b0ff 20%, transparent 80%);
+}
+
+@media (min-width: 650px) {
+  .contact .callMe h3:after {
+    left: 0px;
+  }
 }
 
 .contact .callMe p {
   padding-bottom: 2rem;
   padding-top: 3rem;
+  padding-right: 2.5rem;
 }
 
 @media (min-width: 650px) {
@@ -817,6 +851,11 @@ header .more {
   font-size: 1.1rem;
   color: #fff;
   line-height: 2rem;
+  border: 1px solid #ef2e5d;
+}
+
+.contact input {
+  border: 1px solid #ef2e5d;
 }
 
 .contact input:focus, .contact textarea:focus {
@@ -826,13 +865,18 @@ header .more {
 
 .contact button {
   width: 10rem;
-  color: white;
+  color: #66b0ff;
   font-weight: bold;
   font-size: 1.4rem;
-  background-color: #66b0ff;
+  background-color: white;
   border: transparent;
   border-radius: 9px;
   letter-spacing: .3rem;
+  text-transform: uppercase;
+}
+
+.contact button:hover {
+  cursor: pointer;
 }
 
 footer {
