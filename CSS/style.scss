@@ -645,11 +645,15 @@ header {
             text-align: center;
             font-size: 2.3rem;
             padding-bottom: 1rem;
-            color: $pinkish;
+            color: black;
             @include tabletM {
                 padding-bottom: 1rem;
                 padding-top: 1rem;
             }
+        }
+
+        .high3 {
+            color: $pinkish;
         }
 
         
@@ -673,13 +677,21 @@ header {
            li {
                font-size: 1.3rem;
                font-weight: bold;
-               color: $bluish;
+               color: $pinkish;
+               
+               
 
                .high2 {
-                   background: $bluish;
+                   
                    padding: 0 9px 0 9px;
-                   color: white;
+                   color: black;
+                   position: relative;
+                   background: linear-gradient(to top, $bluish, transparent 50%)
                }
+           }
+
+           .high2:after {
+               
            }
         }
 
@@ -732,9 +744,28 @@ header {
         min-width: 300px;
         margin: 0 auto;
         margin-bottom: 4rem;
+        position: relative;
+
+        h3 {
+            font-size: 2rem;
+           position: relative;
+           
+        }
+
+        h3:after {
+            content: "";
+            max-width: 400px;
+            min-width: 250px;
+            position: absolute;
+            height: 2px;
+            left: 0;
+            bottom: -10px;
+            background: linear-gradient(to right, $pinkish 50%, transparent);
+        }
 
         p {
             padding-bottom: 2rem;
+            padding-top: 3rem;
             
         }
         @include tabletM {
