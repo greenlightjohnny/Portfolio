@@ -4,16 +4,16 @@ const windowH = window.innerHeight / 5;
 
 
 function changeP(e) {
-    
-    if(background.classList.contains('slow')) {
+
+    if (background.classList.contains('slow')) {
         return;
     } else {
         const mouseX = e.clientX / windowW;
-    const mouseY = e.clientY / windowH;
-    
-    background.style.transform = `translate3D(-${mouseX}%, -${mouseY}%, 0)`
+        const mouseY = e.clientY / windowH;
+
+        background.style.transform = `translate3D(-${mouseX}%, -${mouseY}%, 0)`
     }
-    
+
 };
 
 function moveSlow() {
@@ -22,18 +22,7 @@ function moveSlow() {
 }
 
 function removeSlow(e) {
-    console.log('jmmm');
-
-  
-   
-
-    
-    setTimeout(function() {
-        
-        background.classList.remove('slow');
-    }, 300)
-   
-
+ background.classList.remove('slow');
 }
 
 background.addEventListener('mouseenter', removeSlow);
@@ -49,36 +38,34 @@ let first = document.querySelector('.fix');
 let skillList = document.querySelectorAll('.slideUp');
 let slideLeft = document.querySelectorAll('.slideLeft');
 let slideRight = document.querySelectorAll('.slideRight');
-console.log(skillList);
 
 
 function slideIn() {
-   
+
     let nav = document.querySelector('nav');
-    console.log('scroll Y ' + window.scrollY);
-    console.log(window.innerHeight);
-    if(window.scrollY > window.innerHeight) {
+
+    if (window.scrollY > window.innerHeight) {
         nav.classList.add('navShow');
     } else {
         nav.classList.remove('navShow');
     }
-    
+
     slideItems.forEach(i => {
 
-        if(i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop <  window.scrollY + window.innerHeight ) {
+        if (i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
             i.classList.remove('hidden');
             i.classList.add('fade-in-element');
-            
+
         } else {
             i.classList.add('hidden');
             i.classList.remove('fade-in-element');
         }
-        
+
 
     })
 
     skillList.forEach(i => {
-        if(i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
+        if (i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
             i.classList.add('inView')
         } else {
             i.classList.remove('inView');
@@ -86,7 +73,7 @@ function slideIn() {
     })
 
     slideRight.forEach(i => {
-        if(i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
+        if (i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
             i.classList.add('fromRight')
         } else {
             i.classList.remove('fromRight')
@@ -94,7 +81,7 @@ function slideIn() {
     })
 
     slideLeft.forEach(i => {
-        if(i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
+        if (i.getBoundingClientRect().top + i.scrollHeight / 1.2 + document.documentElement.scrollTop < window.scrollY + window.innerHeight) {
             i.classList.add('fromLeft')
         } else {
             i.classList.remove('fromLeft')
@@ -112,9 +99,23 @@ const ham = document.querySelector('.ham');
 const mIcon = document.querySelector('.mIcon');
 const ul = document.querySelector('ul');
 const nav = document.querySelector('nav');
-
+const li = document.querySelectorAll('nav li');
+console.log(li);
 ham.addEventListener('click', animateMenu);
+li.forEach(i => {
+    i.addEventListener('click', toggleMenu);
+})
 
+function toggleMenu() {
+    if(nav.classList.contains('expand') === false) {
+        return;
+    } else {
+        mIcon.classList.toggle('animate');
+        ul.classList.toggle('ulShow');
+        nav.classList.toggle('expand');
+
+    }
+}
 function animateMenu() {
     mIcon.classList.toggle('animate');
     ul.classList.toggle('ulShow');
@@ -130,18 +131,18 @@ function animateMenu() {
 
 
 // function checkHeight() {
-    
-   
+
+
 
 //     elements.forEach(i => {
 //         const slideInAt = (window.scrollY + window.innerHeight) - i.offsetHeight;
-       
+
 //         const imageBottom = i.offsetTop + i.offsetHeight;
-        
+
 //         const isHalfShow = slideInAt > i.offsetTop;
-       
+
 //         const isNotPast = window.scrollY < imageBottom;
-        
+
 
 //         if(isHalfShow && isNotPast) {
 //             i.classList.add('fade-in-element');

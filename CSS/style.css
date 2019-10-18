@@ -13,6 +13,7 @@ html, body, * {
   padding: 0;
   margin: 0;
   font-family: 'rubik';
+  scroll-behavior: smooth;
 }
 
 .highlightOne {
@@ -223,7 +224,7 @@ nav ul {
 @media (min-width: 900px) {
   nav ul {
     display: inline-block;
-    margin-left: 50%;
+    margin-left: 40%;
     padding-top: 1rem;
     padding-bottom: 1rem;
     height: auto;
@@ -298,8 +299,20 @@ header h1 {
   font-size: 3.5rem;
 }
 
+@media (min-width: 650px) {
+  header h1 {
+    font-size: 5rem;
+  }
+}
+
 header p {
   line-height: 1.7rem;
+}
+
+@media (min-width: 650px) {
+  header p {
+    font-size: 1.4rem;
+  }
 }
 
 header .mainIntro {
@@ -334,8 +347,20 @@ header .more {
   width: 16rem;
 }
 
+header .more .downArrow {
+  border: solid white;
+  border-width: 0px 0px 4px 4px;
+  width: 40px;
+  margin: 0 auto;
+  height: 40px;
+  -webkit-animation: bounce 2s infinite;
+          animation: bounce 2s infinite;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
 .projects {
-  background: #f2f2f2;
+  background: white;
 }
 
 .projects h2 {
@@ -520,8 +545,9 @@ header .more {
 }
 
 .about {
-  background: #fdfdfd;
+  background: #f6f6f6;
   color: #333;
+  padding-bottom: 5rem;
 }
 
 .about h2 {
@@ -551,8 +577,13 @@ header .more {
 .about .newFlex article {
   position: relative;
   overflow-x: hidden;
+  overflow-y: hidden;
   background: white;
-  padding-bottom: 6rem;
+  padding-bottom: 1rem;
+  -webkit-box-shadow: 0 0 10px;
+          box-shadow: 0 0 10px;
+  border-radius: 5px;
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 650px) {
@@ -565,7 +596,7 @@ header .more {
     margin-left: 1rem;
     margin-right: 1rem;
     border-radius: 5px;
-    margin-bottom: -5rem;
+    margin-bottom: -14rem;
     -webkit-box-shadow: 0 0 10px;
             box-shadow: 0 0 10px;
   }
@@ -668,15 +699,13 @@ header .more {
 .about .newFlex ul li {
   font-size: 1.3rem;
   font-weight: bold;
-  color: #ef2e5d;
+  color: black;
 }
 
-.about .newFlex ul li .high2 {
+.about .newFlex ul li .high2, .about .newFlex ul li .high3 {
   padding: 0 9px 0 9px;
   color: black;
   position: relative;
-  background: -webkit-gradient(linear, left bottom, left top, from(#66b0ff), color-stop(50%, transparent));
-  background: linear-gradient(to top, #66b0ff, transparent 50%);
 }
 
 .about .newFlex p {
@@ -685,6 +714,68 @@ header .more {
   padding-bottom: 1rem;
   line-height: 1.5rem;
   color: black;
+}
+
+.arrowBounce {
+  -webkit-animation: bounce 2s infinite;
+          animation: bounce 2s infinite;
+  color: #5778F3;
+  font-size: 22px;
+  position: relative;
+}
+
+.arrowBounce::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: url("../assets/images/scroll-arrow.svg") no-repeat;
+  height: 26px;
+  width: 18px;
+}
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
 }
 
 /*********** CONTACT **********************************/
@@ -757,8 +848,8 @@ header .more {
   height: 2px;
   left: 10%;
   bottom: -10px;
-  background: -webkit-gradient(linear, left top, right top, color-stop(20%, #66b0ff), color-stop(80%, transparent));
-  background: linear-gradient(to right, #66b0ff 20%, transparent 80%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, #ef2e5d), color-stop(80%, transparent));
+  background: linear-gradient(to right, #ef2e5d 20%, transparent 80%);
 }
 
 @media (min-width: 650px) {
@@ -771,6 +862,7 @@ header .more {
   padding-bottom: 2rem;
   padding-top: 3rem;
   padding-right: 2.5rem;
+  line-height: 1.5rem;
 }
 
 @media (min-width: 650px) {
@@ -792,14 +884,14 @@ header .more {
 .contact h2 {
   text-align: center;
   font-size: 3rem;
-  padding-top: 6rem;
+  padding-top: 5rem;
   padding-bottom: 2rem;
   color: #66b0ff;
 }
 
 @media (min-width: 650px) {
   .contact h2 {
-    padding-top: 10rem;
+    padding-top: 16rem;
   }
 }
 
@@ -851,32 +943,35 @@ header .more {
   font-size: 1.1rem;
   color: #fff;
   line-height: 2rem;
-  border: 1px solid #ef2e5d;
+  border: 1px solid #66b0ff;
 }
 
 .contact input {
-  border: 1px solid #ef2e5d;
+  border: 1px solid #66b0ff;
 }
 
 .contact input:focus, .contact textarea:focus {
   outline: none;
-  border: 1px solid #66b0ff;
+  border: 1px solid #ef2e5d;
 }
 
 .contact button {
   width: 10rem;
-  color: #66b0ff;
+  color: white;
   font-weight: bold;
   font-size: 1.4rem;
-  background-color: white;
-  border: transparent;
-  border-radius: 9px;
+  background-color: transparent;
+  border: 3px solid #ef2e5d;
+  border-radius: 15px;
   letter-spacing: .3rem;
   text-transform: uppercase;
+  -webkit-transition: all ease-in-out .4s;
+  transition: all ease-in-out .4s;
 }
 
 .contact button:hover {
   cursor: pointer;
+  background-color: #ef2e5d;
 }
 
 footer {
